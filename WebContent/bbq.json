@@ -17,6 +17,247 @@
 	"lat": "-37.818837", 
 	"lng": "144.942702",
 	"iscovered": "false"
-	}
+	},
+	{
+	"name": "Docklands Park",
+	"lat": "-37.819453", 
+	"lng": "144.946070",
+	"iscovered": "false"
+	},
+	{
+	"name": "Docklands Park #2",
+	"lat": "-37.820831", 
+	"lng": "144.946529",
+	"iscovered": "false"
+	},
+	{
+	"name": "Docklands Park #3",
+	"lat": "-37.822002", 
+	"lng": "144.947312",
+	"iscovered": "false"
+	},
+	{
+	"name": "Victoria Green",
+	"lat": "-37.820417", 
+	"lng": "144.944830",
+	"iscovered": "false"
+	},
+	{
+	"name": "Victoria Green #2",
+	"lat": "-37.820459", 
+	"lng": "144.945221",
+	"iscovered": "false"
+	},
+	{
+"name": "North Melbourne Community Centre",
+"lat": "-37.793605",
+"lng":"144.940228",
+"iscovered": "false"
+},
+{
+"name": "Point Park",
+"lat": "-37.823001",
+"lng":"144.941185",
+"iscovered": "false"
+},
+{
+"name": "Point Park #2",
+"lat": "-37.823060",
+"lng":"144.941774",
+"iscovered": "false"
+},
+{
+"name": "Enterprize Park",
+"lat": "-37.820184",
+"lng":"144.959753",
+"iscovered": "false"
+},
+{
+"name": "Batman Park",
+"lat": "-37.821757",
+"lng":"144.957064",
+"iscovered": "false"
+},
+{
+"name": "Kensington Railway",
+"lat": "-37.795159",
+"lng":"144.930768",
+"iscovered": "false"
+},
+{
+"name": "Southbank Promenade",
+"lat": "-37.820737",
+"lng":"144.962495",
+"iscovered": "false"
+},
+{
+"name": "Royal Park",
+"lat": "-37.782004",
+"lng":"144.956602",
+"iscovered": "false"
+},
+{
+"name": "Royal Park #2",
+"lat": "-37.787089",
+"lng":"144.952725",
+"iscovered": "false"
+},
+{
+"name": "Royal Park #3",
+"lat": "-37.789835",
+"lng":"144.945160",
+"iscovered": "false"
+},
+{
+"name": "Royal Park #4",
+"lat": "-37.785225",
+"lng":"144.946278",
+"iscovered": "false"
+},
+{
+"name": "Royal Park #5",
+"lat": "-37.782891",
+"lng":"144.944197",
+"iscovered": "false"
+},
+{
+"name": "Royal Park #6",
+"lat": "-37.782920",
+"lng":"144.943184",
+"iscovered": "false"
+},
+{
+"name": "Royal Park #7",
+"lat": "-37.779565",
+"lng":"144.939783",
+"iscovered": "false"
+},
+{
+"name": "Warun Biik Park",
+"lat": "-37.796166",
+"lng":"144.926856",
+"iscovered": "false"
+},
+{
+"name": "J.J. Holland Park",
+"lat": "-37.797989",
+"lng":"144.926041",
+"iscovered": "false"
+},
+{
+"name": "J.J. Holland Park #2",
+"lat": "-37.797260",
+"lng":"144.923276",
+"iscovered": "false"
+},
+{
+"name": "J.J. Holland Park #3",
+"lat": "-37.798087",
+"lng":"144.921395",
+"iscovered": "false"
+},
+{
+"name": "Bayswater Road Park",
+"lat": "-37.793732",
+"lng":"144.923817",
+"iscovered": "false"
+},
+{
+"name": "Birrarung Marr",
+"lat": "-37.819781",
+"lng":"144.974835",
+"iscovered": "false"
+},
+{
+"name": "Birrarung Marr #2",
+"lat": "-37.820524",
+"lng":"144.975584",
+"iscovered": "false"
+},
+{
+"name": "Sturt Street Reserve",
+"lat": "-37.830005",
+"lng":"144.965150",
+"iscovered": "false"
+},
+{
+"name": "Sturt Street Reserve #2",
+"lat": "-37.829650",
+"lng":"144.964949",
+"iscovered": "false"
+},
+{
+"name": "Princes Park",
+"lat": "-37.785017",
+"lng":"144.962070",
+"iscovered": "false"
+},
+{
+"name": "Alexandra Park",
+"lat": "-37.824037",
+"lng":"144.977430",
+"iscovered": "false"
+},
+{
+"name": "Alexandra Park #2",
+"lat": "-37.824310",
+"lng":"144.977712",
+"iscovered": "false"
+},
+{
+"name": "Alexandra Park #3",
+"lat": "-37.824462",
+"lng":"144.977792",
+"iscovered": "false"
+},
+{
+"name": "Alexandra Park #4",
+"lat": "-37.824769",
+"lng":"144.978022",
+"iscovered": "false"
+},
+{
+"name": "Alexandra Park #5",
+"lat": "-37.827001",
+"lng":"144.980587",
+"iscovered": "false"
+},
+{
+"name": "Alexandra Park #6",
+"lat": "-37.827465",
+"lng":"144.981595",
+"iscovered": "false"
+},
+{
+"name": "Alexandra Park #7",
+"lat": "-37.827749",
+"lng":"144.982427",
+"iscovered": "false"
+},
+{
+"name": "Alexandra Park #8",
+"lat": "-37.827803",
+"lng":"144.982817",
+"iscovered": "false"
+},
+{
+"name": "Fawkner Park",
+"lat": "-37.839148",
+"lng":"144.980656",
+"iscovered": "false"
+},
+{
+"name": "Fawkner Park #2",
+"lat": "-37.840479",
+"lng":"144.983940",
+"iscovered": "false"
+},
+{
+"name": "Fawkner Park #3",
+"lat": "-37.842146",
+"lng":"144.981769",
+"iscovered": "false"
+}
   ]
 }
+
