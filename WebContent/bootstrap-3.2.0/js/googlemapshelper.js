@@ -78,6 +78,12 @@ function goToAnchor(index){
     history.replaceState(null,null,url);
 }
 
+function goToAnchorMap(){
+	var url = location.href;
+    location.href = "#map_places";
+    history.replaceState(null,null,url);
+}
+
 function addLocationAndLink(pos, link, index){
 	// Get coordinates
 	var options = {
@@ -123,6 +129,7 @@ function bounceAndCenter(index) {
 	var marker = markers[index];
 	bounce(index);
 	map.setCenter(marker.getPosition());
+	goToAnchorMap();
 }
 
 function directions(destination){
@@ -133,6 +140,7 @@ function directions(destination){
 		  computeRoute(initialLocation, end);
 		});
 	bounce(destination);
+	goToAnchorMap();
 }
 
 function computeRoute(start, end){

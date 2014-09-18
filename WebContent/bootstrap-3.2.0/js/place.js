@@ -15,6 +15,10 @@ $(document).ready(function() {
 	function parseJSON( data ) {
 		allPlaces = data.places;
 		
+		allPlaces.sort(function(a, b){
+			return a.name.localeCompare(b.name);
+			});
+		
 		for(var i=0; i<allPlaces.length; i++){
 			bbqPlaces.push(new google.maps.LatLng(allPlaces[i].lat, allPlaces[i].lng));
 		}
