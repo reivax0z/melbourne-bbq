@@ -4,28 +4,35 @@
 
 //Global variables
 var map;
+var directionsDisplay;
+var directionsService;
+var initialLocation;
+
 var prevSelectPlace = 0;
-var prevTabIndex = 0;
-
-var selectedClassName = "list-group-item active";
-var unselectedClassName = "list-group-item";
-
-var tabs = ['all_'];
-var icons = ['http://maps.google.com/mapfiles/ms/icons/red-dot.png',
-             'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
-             'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png'];
-
-var markers = new Array(3);
-for (var i = 0; i < markers.length; i++) {
-  markers[i] = new Array(10);
-}
-
-var prevBouncingTabIndex = 0;
 var prevBouncingIndex = 0;
 
-function initializeMapPlaces(positions, places, zoomVal, tabIndex) {
+var selectedClassName = "selectedPlace";
+var unselectedClassName = "";
+var selectedIcon = "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png";
+var unselectedIcon = "http://maps.google.com/mapfiles/ms/icons/red-dot.png";
+
+var tabs = 'all_';
+
+var markers = new Array();
+
+
+var browserSupportFlag = false;
+
+function initializeMapPlaces(positions, places, zoomVal) {
+	directionsDisplay = new google.maps.DirectionsRenderer();
+	directionsService = new google.maps.DirectionsService();
+	
 	var sumLat = 0;
 	var sumLong = 0;
+	
+	if(navigator.geolocation) {
+		browserSupportFlag = true;
+	}
 	
 	// Create a new LatLngBounds object
 	var markerBounds = new google.maps.LatLngBounds();
@@ -52,48 +59,49 @@ function initializeMapPlaces(positions, places, zoomVal, tabIndex) {
 	
 	// delegate it with a parameter containing all the positions
 	for (var i = 0; i < positions.length; i++) {
-		addLocationAndLink(positions[i], places[i], i, tabIndex);
+		addLocationAndLink(positions[i], places[i], i);
 	}
 }
 
-
-function selectOnePlace(tabIndex, index) {
-	document.getElementById(tabs[prevTabIndex]+prevSelectPlace).className = unselectedClassName;
-    document.getElementById(tabs[tabIndex]+index).className = selectedClassName;
+function selectOnePlace(index) {
+	document.getElementById(tabs+prevSelectPlace).className = unselectedClassName;
+	markers[prevSelectPlace].setIcon(unselectedIcon);
+    document.getElementById(tabs+index).className = selectedClassName;
+	markers[index].setIcon(selectedIcon);
     
     prevSelectPlace = index;
-    prevTabIndex = tabIndex;
 }
 
-function goToAnchor(tabIndex, index){
+function goToAnchor(index){
 	var url = location.href;
-    location.href = "#"+tabs[tabIndex]+index;
+    location.href = "#"+tabs+index;
     history.replaceState(null,null,url);
 }
 
-function addLocationAndLink(pos, link, index, tabIndex){
+function addLocationAndLink(pos, link, index){
 	// Get coordinates
 	var options = {
 			position: pos,
 			title: link.name,
-			icon: icons[tabIndex]
+			icon: unselectedIcon
 	};
 	var marker = new google.maps.Marker(options);
 	
 	google.maps.event.addListener(marker, 'click', function() {
-	  bounce(tabIndex, index);
-	  goToAnchor(tabIndex, index);
-    });
+		clearDirections();
+		bounce(index);
+		goToAnchor(index);
+	});
 
 	// Show marker on map
 	marker.setMap(map);
 	
-	markers[tabIndex][index] = marker;
+	markers[index] = marker;
 }
 
-function bounce(tabIndex, index) {
-	var marker = markers[tabIndex][index];
-	var prevMarker = markers[prevBouncingTabIndex][prevBouncingIndex];
+function bounce(index) {
+	var marker = markers[index];
+	var prevMarker = markers[prevBouncingIndex];
 	
 	prevMarker.setAnimation(null);
 	
@@ -105,14 +113,48 @@ function bounce(tabIndex, index) {
 		marker.setAnimation(google.maps.Animation.BOUNCE);
 	}
 	
-	selectOnePlace(tabIndex, index);
+	selectOnePlace(index);
 	
 	prevBouncingIndex = index;
-	prevBouncingTabIndex = tabIndex;
 }
 
-function bounceAndCenter(tabIndex, index) {
-	var marker = markers[tabIndex][index];
-	bounce(tabIndex, index);
+function bounceAndCenter(index) {
+	clearDirections();
+	var marker = markers[index];
+	bounce(index);
 	map.setCenter(marker.getPosition());
+}
+
+function directions(destination){
+	var end = markers[destination].getPosition();
+	navigator.geolocation.getCurrentPosition(function(position) {
+		  initialLocation = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+		  map.setCenter(initialLocation);
+		  computeRoute(initialLocation, end);
+		});
+	bounce(destination);
+}
+
+function computeRoute(start, end){
+	clearDirections();
+	directionsDisplay.setMap(map);
+	  var request = {
+	      origin:start,
+	      destination:end,
+	      travelMode: google.maps.TravelMode.WALKING
+	  };
+	  directionsService.route(request, function(response, status) {
+	    if (status == google.maps.DirectionsStatus.OK) {
+	      directionsDisplay.setDirections(response);
+	    }
+	  });
+}
+
+function clearDirections(){
+	if(directionsDisplay != null) {
+		directionsDisplay.setMap(null);
+		directionsDisplay = null;
+	}
+
+	directionsDisplay = new google.maps.DirectionsRenderer();
 }

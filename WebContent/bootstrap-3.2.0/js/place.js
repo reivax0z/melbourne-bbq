@@ -2,10 +2,11 @@ var allPlaces = [];
 var bbqPlaces = new Array();
 
 function populateContent(){
-	var content = "";
+	var content = '<table class="table table-striped"><tbody>';
 	for(var i=0; i<allPlaces.length; i++){
-	  content += '<a id="all_'+i+'" href="#map_places" class="list-group-item" onclick="bounceAndCenter(0, '+i+');">'+allPlaces[i].name+'</a>';
+	  content += '<tr id="all_'+i+'"><td>'+allPlaces[i].name+'</td><td><buton type="button" class="btn btn-default" onclick="bounceAndCenter('+i+');">Location</button></td><td><buton type="button" class="btn btn-success" onclick="directions('+i+');">Directions</buton></td></tr>';
 	}
+	content += '</tbody></table>';
 	document.getElementById("list_places").innerHTML = content;
 }
 
@@ -17,7 +18,7 @@ $(document).ready(function() {
 		for(var i=0; i<allPlaces.length; i++){
 			bbqPlaces.push(new google.maps.LatLng(allPlaces[i].lat, allPlaces[i].lng));
 		}
-		initializeMapPlaces(bbqPlaces, allPlaces, 13, 0);
+		initializeMapPlaces(bbqPlaces, allPlaces, 13);
 		populateContent();
 	}
 	
