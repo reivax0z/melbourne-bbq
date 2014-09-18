@@ -1,0 +1,22 @@
+{ "places" :
+  [
+	{
+	"name": "Flagstaff Gardens",
+	"lat": "-37.809619", 
+	"lng": "144.954729",
+	"iscovered": "false"
+	},
+	{
+	"name": "Gardiner Reserve",
+	"lat": "-37.799101",
+	"lng": "144.943832",
+	"iscovered": "false"
+	},
+	{
+	"name": "Victoria Harbour Promenade",
+	"lat": "-37.818837", 
+	"lng": "144.942702",
+	"iscovered": "false"
+	}
+  ]
+}
