@@ -2,96 +2,143 @@
 <html lang="en" prefix="og: http://ogp.me/ns#">
 <head>
 <meta charset="ISO-8859-1">
-	<meta name="title" content="Public BBQ in Melbourne">
-	<meta name="description" content="Because we all love a good barbie!">
-	<meta name="keywords" content="Melbourne, public BBQ, barbecue">
-    <meta name="author" content="Xavier CARON">
-	
-	<meta property="og:title" content="Public BBQ in Melbourne" />
-	<meta property="og:type" content="website" />
-	<meta property="og:url" content="xaviertraveltips.herokuapp.com" />
-	<meta property="og:description" content="Because we all love a good barbie!" />
-	<meta property="og:image" content="http://xavier.w.caron.free.fr/website/resources/img/melbourne-bbq/melbourne-bbq-app.png" />
-	<meta property="og:image:type" content="image/jpeg" />
-	<meta property="og:image:width" content="150" />
-	<meta property="og:image:height" content="150" />
-	
-	<meta name="twitter:card" content="summary" />
-	<meta name="twitter:title" content="Public BBQ in Melbourne" />
-	<meta name="twitter:description" content="Because we all love a good barbie!" />
-	<meta name="twitter:creator" content="@Xavier_w_Caron" />
-	<meta name="twitter:image:src" content="http://xavier.w.caron.free.fr/website/resources/img/melbourne-bbq/melbourne-bbq-app.png" />
-	<meta name="twitter:image:width" content="150" />
-	<meta name="twitter:image:height" content="150" />
-	
-	
-    <link rel="shortcut icon" href="http://xavier.w.caron.free.fr/website/resources/img/melbourne-bbq/melbourne-bbq-app.ico">
+<meta name="title" content="Public BBQ in Melbourne">
+<meta name="description" content="Because we all love a good barbie!">
+<meta name="keywords" content="Melbourne, public BBQ, barbecue">
+<meta name="author" content="Xavier CARON">
+
+<meta property="og:title" content="Public BBQ in Melbourne" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="xaviertraveltips.herokuapp.com" />
+<meta property="og:description"
+	content="Because we all love a good barbie!" />
+<meta property="og:image"
+	content="http://xavier.w.caron.free.fr/website/resources/img/melbourne-bbq/melbourne-bbq-app.png" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="150" />
+<meta property="og:image:height" content="150" />
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Public BBQ in Melbourne" />
+<meta name="twitter:description"
+	content="Because we all love a good barbie!" />
+<meta name="twitter:creator" content="@Xavier_w_Caron" />
+<meta name="twitter:image:src"
+	content="http://xavier.w.caron.free.fr/website/resources/img/melbourne-bbq/melbourne-bbq-app.png" />
+<meta name="twitter:image:width" content="150" />
+<meta name="twitter:image:height" content="150" />
 
 
-	<title>Public BBQ in Melbourne</title>
+<link rel="shortcut icon"
+	href="http://xavier.w.caron.free.fr/website/resources/img/melbourne-bbq/melbourne-bbq-app.ico">
 
-	<!-- CSS -->
-	<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
-    <link href="./bootstrap-3.2.0/dist/css/bootstrap.css" rel="stylesheet">
-    
-    <!-- JQUERY -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    
-    <!-- BOOTSTRAP -->
-    <script type="text/javascript" src="./bootstrap-3.2.0/dist/js/bootstrap.js"></script>    
-    
-    <!-- MY JS FILES -->
-    <script type="text/javascript" src="./bootstrap-3.2.0/js/googlemapshelper.js"></script>
-    <script type="text/javascript" src="./bootstrap-3.2.0/js/place.js"></script>
-    
-    <!-- GOOGLE MAPS -->
-    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
-    
+
+<title>Public BBQ in Melbourne</title>
+
+<!-- CSS -->
+<link
+	href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css"
+	rel="stylesheet" type="text/css" />
+<link href="./bootstrap-3.2.0/dist/css/bootstrap.css" rel="stylesheet">
+
+<!-- JQUERY -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<!-- BOOTSTRAP -->
+<script type="text/javascript"
+	src="./bootstrap-3.2.0/dist/js/bootstrap.js"></script>
+
+<!-- MY JS FILES -->
+<script type="text/javascript" src="./bootstrap-3.2.0/js/showhide.js"></script>
+<script type="text/javascript"
+	src="./bootstrap-3.2.0/js/googlemapshelper.js"></script>
+<script type="text/javascript" src="./bootstrap-3.2.0/js/place.js"></script>
+
+<!-- GOOGLE MAPS -->
+<script type="text/javascript"
+	src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
 </head>
 <body>
 
 	<div class="container">
 
-	<div class="row">
-        <div class="col-xs-12 col-sm-12">
-          <div class="jumbotron shadow background-grey">
-            <h1>Public BBQ in Melbourne</h1>
-            <h2>Because we all love a good barbie!</h2>
-          </div>
-        </div>
-    </div>
-    
-    <div class="row">
-       <div class="col-xs-12">
-         <div class="shadow padding10">
-           <div id="map_places" style="height:500px;"></div>
-         </div>
-       </div>
-     </div>
-     
-     <div class="page-header">
-  		<h1>List of all BBQ <small>Get locations and directions*</small></h1>
+		<div class="row">
+			<div class="col-xs-12 col-sm-12">
+				<div class="jumbotron shadow background-grey">
+					<h1>Public BBQ in Melbourne</h1>
+					<h2>Because we all love a good barbie!</h2>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="shadow padding10">
+					<div id="map_places" style="height: 500px;"></div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-xs-12">
+				<div id="error_no_position" class="alert alert-danger" role="alert"
+					style="display: none">
+					<p>
+						<strong>Oh snap!</strong> Your browser is not allowed to access your location. 
+						Therefore, no direction can be provided...
+					</p>
+				</div>
+				<div id="error_too_far" class="alert alert-warning" role="alert"
+					style="display: none">
+					<p>
+						<strong>Oh snap!</strong> Your position is too far from the destination. 
+						Please come closer (&lt;10km) and recall the service!
+					</p>
+				</div>
+				<div id="direction_info_box" class="alert alert-info" role="alert"
+					style="display: none">
+					<p><strong>Distance: </strong><span id="distance_info"></span></p>
+					<p><strong>ETA (walking): </strong><span id="time_info"></span></p>
+				</div>
+			</div>
+		</div>
+
+		<div class="page-header">
+			<h1>
+				List of all BBQ <small>Get locations and directions*</small>
+			</h1>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-12 ">
+				<div id="list_places"></div>
+			</div>
+		</div>
+
+		<hr>
+
+		<footer>
+		<p>
+			<b><u>*NB:</u></b> Directions are only available if your browser is
+			allowed to access your location.
+		</p>
+		<p>
+			Design adapted from <i>Bootstrap</i>.
+		</p>
+		<p class="pull-right">
+			<a href="#">Back to top</a>
+		</p>
+		<p>
+			© <a href="http://www.linkedin.com/in/xavierwilfriddimitrycaron"
+				target="_blank"><b>Xavier CARON</b></a>, 2014
+		</p>
+		</footer>
+
 	</div>
-     
-     <div class="row">
-       <div class="col-xs-12 ">
-       <div id="list_places">
-  		
-     	</div>
-   	  </div>
-   	</div>
-     
-      <hr>
+	<!--/.container-->
 
-      <footer>
-        <p><b><u>NB:</u></b> Directions are only available if your browser is allowed to access your location.</p>
-        <p>Design adapted from <i>Bootstrap</i>.</p>
-        <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>© <a href="http://www.linkedin.com/in/xavierwilfriddimitrycaron" target="_blank"><b>Xavier CARON</b></a>, 2014</p>
-      </footer>
-
-    </div><!--/.container-->
-	
 
 </body>
 </html>

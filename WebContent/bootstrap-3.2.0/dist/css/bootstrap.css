@@ -6229,3 +6229,9 @@ button.close {
 	color:#F16D6D;
 	font-weight:bold;
 }
+.selectedPlace > td{
+	background-color: #F9FF5F;
+}
+.table-striped > tbody > tr:nth-child(odd).selectedPlace > td {
+  background-color: #F9FF5F;
+}
