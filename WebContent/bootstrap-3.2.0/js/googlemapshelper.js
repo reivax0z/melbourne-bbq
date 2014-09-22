@@ -69,13 +69,6 @@ function selectOnePlace(index) {
     document.getElementById(tabs+index).className = selectedClassName;
 	markers[index].setIcon(selectedIcon);
 	
-//	var cellsPrev = document.getElementById(tabs+prevSelectPlace).cells;
-//	var cellsCurr = document.getElementById(tabs+index).cells;
-//	for(var i=0; i<cellsPrev.length; i++){
-//		cellsPrev[i].style.innerHTML = '';
-//		cellsCurr[i].style.innerHTML = 'background-color:yellow;';
-//	}
-    
     prevSelectPlace = index;
 }
 
@@ -176,7 +169,7 @@ function computeRoute(start, end){
 	      var distance = response.routes[0].legs[0].distance.text;
 	      var distanceInt = response.routes[0].legs[0].distance.value;
 	      var duration = response.routes[0].legs[0].duration.text;
-	      if(distanceInt > 5000){
+	      if(distanceInt > 10000){
 	    	  showElement('error_too_far');
 	    	  goToAnchor('error_too_far');
 	      } else{
