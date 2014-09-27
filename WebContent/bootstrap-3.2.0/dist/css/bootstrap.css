@@ -895,7 +895,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
   color: #333;
@@ -6226,7 +6226,7 @@ button.close {
 	color:#fff;
 }
 .selectedPlace{
-	color:#F16D6D;
+	color:#d9534f;
 	font-weight:bold;
 }
 .selectedPlace > td{
