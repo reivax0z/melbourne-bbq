@@ -1,7 +1,3 @@
-/**
- * 
- */
-
 //Global variables
 var map;
 var directionsDisplay;
@@ -26,14 +22,14 @@ var browserSupportFlag = false;
 function initializeMapPlaces(positions, places, zoomVal) {
 	directionsDisplay = new google.maps.DirectionsRenderer();
 	directionsService = new google.maps.DirectionsService();
-	
+
 	var sumLat = 0;
 	var sumLong = 0;
-	
+
 	if(navigator.geolocation) {
 		browserSupportFlag = true;
 	}
-	
+
 	// Create a new LatLngBounds object
 	var markerBounds = new google.maps.LatLngBounds();
 
@@ -45,7 +41,7 @@ function initializeMapPlaces(positions, places, zoomVal) {
 	sumLat/=positions.length;
 	sumLong/=positions.length;
 	var centerPos = new google.maps.LatLng(sumLat, sumLong);
-	
+
 	// Init the map
 	var myOptions = {
 			zoom: zoomVal,
@@ -54,9 +50,9 @@ function initializeMapPlaces(positions, places, zoomVal) {
 	};
 
 	map = new google.maps.Map(document.getElementById('map_places'), myOptions);
-	
+
 	map.fitBounds(markerBounds);
-	
+
 	// delegate it with a parameter containing all the positions
 	for (var i = 0; i < positions.length; i++) {
 		addLocationAndLink(positions[i], places[i], i);
@@ -68,7 +64,7 @@ function selectOnePlace(index) {
 	markers[prevSelectPlace].setIcon(unselectedIcon);
     document.getElementById(tabs+index).className = selectedClassName;
 	markers[index].setIcon(selectedIcon);
-	
+
     prevSelectPlace = index;
 }
 
@@ -98,7 +94,7 @@ function addLocationAndLink(pos, link, index){
 			icon: unselectedIcon
 	};
 	var marker = new google.maps.Marker(options);
-	
+
 	google.maps.event.addListener(marker, 'click', function() {
 		clearDirections();
 		bounce(index);
@@ -107,16 +103,16 @@ function addLocationAndLink(pos, link, index){
 
 	// Show marker on map
 	marker.setMap(map);
-	
+
 	markers[index] = marker;
 }
 
 function bounce(index) {
 	var marker = markers[index];
 	var prevMarker = markers[prevBouncingIndex];
-	
+
 	prevMarker.setAnimation(null);
-	
+
 	// Is the marker already animating?
 	if (marker.getAnimation()) {
 		marker.setAnimation(null);
@@ -124,9 +120,9 @@ function bounce(index) {
 		// Make it bounce!
 		marker.setAnimation(google.maps.Animation.BOUNCE);
 	}
-	
+
 	selectOnePlace(index);
-	
+
 	prevBouncingIndex = index;
 }
 
@@ -188,7 +184,7 @@ function clearDirections(){
 	hideElement('error_no_position');
 	hideElement('error_too_far');
 	hideElement('direction_info_box');
-	
+
 	if(directionsDisplay != null) {
 		directionsDisplay.setMap(null);
 		directionsDisplay = null;
